@@ -38,7 +38,7 @@ ul{
 	padding: 0;
 
 }
-li{
+li  button{
 	width: 95%;
 	height: 48px;
 	background-color: #e0f2f7;
@@ -46,15 +46,15 @@ li{
 	border-radius: 8px;
 	margin: 6px;
 	padding: 4px;	
-}
-li a{
-	margin-left: 6px;
-	line-height: 2.5;
+	font-size: 17px;
+	text-align: left;
 	vertical-align: middle;
 }
-li:hover{
+
+li button:hover{
 	background-color: #bde0ff;
 }
+
 @media screen and (max-width: 768px) {
 	.picture, .questions {width: 96%;}
 }
