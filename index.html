@@ -9,35 +9,86 @@
     <!-- Bootstrap -->
    <!-- <link href="css/bootstrap.css" rel="stylesheet">  -->
     <link href="css/style.css" rel="stylesheet">
-   
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
   <body>
   	<h1> Заголовок внатуре   </h1>
     <div class='picture'>
-    	<img src='images/коньночь.png' alt='picture'>
+    	<img id='pictureId' src='images/коньночь.png' alt='picture'>
     	<h4 id='picturename'>Назва картини</h4> 
     </div>
     <div class='questions'>
     	<h4 id='question'>Назва питання, питання безпосередньо</h4>
     	<ul>
-    		<li><a>Відповідь 1</a></li>
-    		<li><a>Відповідь 2</a></li>
-    		<li><a>Відповідь 3</a></li>
-    		<li><a>Відповідь 4</a></li>
-   			<li><a>Відповідь 5</a></li>
-   			<li><a>Відповідь 6</a></li>
+    		<li><a id='ans1'>Відповідь 1</a></li>
+    		<li><a id='ans2'>Відповідь 2</a></li>
+    		<li><a id='ans3'>Відповідь 3</a></li>
+    		<li><a id='ans4'>Відповідь 4</a></li>
+   			<li><a id='ans5'>Відповідь 5</a></li>
+   			<li><a id='ans6'>Відповідь 6</a></li>
     	</ul>
     </div>
 		
 
     
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
-     <script src="js/bootstrap.js"></script>
+	 <button type='button' onclick="Answering()">Внаткре следующий вопрос</button>
+     <script>
+     var i=0;
+        function QuestionFun(sorce, question, answer1, answer2, answer3, answer4, answer5, answer6){
+        	this.sorce=sorce;
+        	this.question=question;
+        	this. answer1=answer1;
+        	this. answer2=answer2;
+        	this. answer3=answer3;
+        	this. answer4=answer4;
+        	this. answer5=answer5;
+        	this. answer6=answer6;
+        }
+        var questionObj = new Array();
+        questionObj[0]= new QuestionFun('images/Gim.png', 'Хто є автор цієї картини?', 'Марія Приймаченко', 'Микола Пимоненко', 'Тетяна Яблонська', 'Олександр Мурашко',  'Олекса Грищенко', 'Михайло Дмитренко' );
+     	questionObj[1]= new QuestionFun('images/коньночь.png', 'За скільки була продана найдорожча картина українського художника?',    '10500$', '11100$', '12200$', '51100$', '124400$', '152200$');
+     	questionObj[2]= new QuestionFun('images/Ukraine.png', 'Який всесвітньо відомий художник свого часу народився на території сучасної  України', 'Василь Кандинський', 'Пабло Пікассо', 'Сальвалор Далі', 'Енді Уорхолл', 'Андрій Рубльов', 'Михайло Врубель');
+     	questionObj[3]= new QuestionFun('images/People.png', 'Хто є автором двох відомих картин під загальною назвою "Один художнік -два народи"?', 'Василь Кандинський', 'Тарас Шевченко', 'Михайло Шишкін', 'Ілля Рєпін', 'Ілля Глазунов', 'Казімір Малєвіч');
+     	
+     	alert(questionObj[1].answer1 + " " + questionObj[3].sorce);
+
+     	questionObj[4]= new QuestionFun('images/Ніч.png', 'Хто є автор картини "Місячна ніч"?', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко');
+     	questionObj[5]= new QuestionFun('images/Нічмалюнок.png', 'Хто є автором малюнка, на якому зображена місячна ніч?', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко');
+     	questionObj[6]= new QuestionFun('images/Геній.png', 'Кого з українських художників називаюь генієм сучасності', 'Анатолій Криволап', 'Ілля Чичкан', 'Арсен Савадов', 'Іван Марчук', 'Олег Тістол', 'Олександр Ройтбурд');
+     	questionObj[7]= new QuestionFun('images/Дівчина.png', 'Хто є автор картини "Дівчина у червоній шляпі?"', 'Олександр Мурашко',   'Микола Пимоненко', 'Сергій Васильківський', '', '', '', );
+     	questionObj[8]= new QuestionFun('images/Жнива.png', 'Хто є автор картини?', 'Тетяна Яблонська', 'Михайло Дмитренко', 'Сергій Васильківський', '', '', 'Микола Пимоненко');
+     	questionObj[9]= new QuestionFun('images/Дервіш.png', 'Хто є автор малюнка "Танок дервіша"?', 'Микола Пимоненко', 'Олександр Мурашко', '', 'Олекса Грищенко', 'Давид Бурлюк', 'Сергій Васильківський');
+     	questionObj[10]= new QuestionFun('images/Квадрат.png', 'Якої картини немає серед творів Казимира Малєвіча?', 'Червоний квадрат', 'Чорне коло', 'Чорний хрест', 'Біле на білому', 'Чорний квадрат і червоний квадрат', 'Червоне коло');
+     	questionObj[11]= new QuestionFun('images/Звір.png', 'Художниця яка малювала звірів, але ніколи не була в зоопарку', 'Людмила Мєшкова', 'Марія Приймаченко', 'Євгенія Гапчинська', 'Тетяна Яблонська', 'Галина Москвитіна', 'Галина Гедзєвич');
+     	questionObj[12]= new QuestionFun('images/Квіти.png', 'Самобутня художниця, в якої за її словами добре виходять квіти, а пейзажі не дуже.', 'Марія Приймаченко', 'Тетяна Яблонська', 'Катерина Білокур', 'Зинаїда Серебрякова', 'Марина Михайлошина', 'Марія Ралко');
+     	questionObj[13]= new QuestionFun('images/Прощавай.png', 'Картина одного із засновників українського постмодернізму Олександра Ройтбурда називається: "Прощавай, ..."', 'Мікеланджело', 'Рафаель', 'Караваджо', 'Леонардо', 'Джото', 'Сандро');
+     	questionObj[14]= new QuestionFun('images/Каін.png', 'Автор картини "Каін"', 'Рембрандт', 'Антон Лосенко', 'Тіциан', 'Аполлон Мокрицький', 'Іван Сошенко', 'Рубенс', );
+     	questionObj[15]= new QuestionFun('images/Лопухіна.png', 'Автор картини "Портрет Марії Лопухіної', 'Володитир Боровіковський', 'Ілля Рєпін', 'Сергій Васильківський', 'Михайло Бойчук', 'Іван Сошенко', 'Аполлон Мокрицький', );
+     	questionObj[16]= new QuestionFun('images/Вуста.png', 'Видатний український художник, який втративши кисті рук створив більше 3000 робіт', 'Вудон Баклицький', 'Давид Беккер', 'Мойсей Абрамович', 'Іван Труш', 'Микола Бідняк', 'Давид Бурлюк', );
+     	questionObj[17]= new QuestionFun('images/Заповіт.png', 'Колекцію картин (67 шт) якого художніка бкло повернуто згідно заповіту з Нью-Йорка в Україну?', 'Олекса Грищенко', 'Олександр Мурашко', 'Архип Куїнджі', 'Микола Пимоненко', 'Андрій Варгола',     'Сергій Васильківський');
+     	questionObj[18]= new QuestionFun('images/Красуня.png', 'Художниця, життєве кредо якої: "Переступай страх. Дій"', 'Олена Левченко', 'Жанна Кадирова', 'Катерина  Косьяненко', 'Адріана Галецька', 'Марина Скугарєва', 'Євгенія Гапчинська');
+     	//questionObj[19]= new QuestionFun('images/Щирець.png', 'Ала Алексеєва', 'Тая Галаган', 'Тетяна Галькун', 'Оксана Мась', 'Влада Ралко', '', '', );
+     	questionObj[20]= new QuestionFun('images/Щирець.png', 'Реаліст, суттєва кількість робіт якого була просто знищена окупаційною владою', 'Олександр Мурашко', 'Олексій Поляков', 'Іван Марчук', 'Федір Захаров', 'Олександр Гнилицький', 'Осип Курилас');
+     	questionObj[21]= new QuestionFun('images/Gim.png', 'Картина "УКРАЇНСЬКА  ДІВЧИНА" (1892) продана на аукціоні в Лондоні у 2005 році за 86 000 фунтів. Хто автор?', 'Микола Бодаревський', 'Микола Брянський', 'Микола Рачків', 'Ілля Рєпін', 'Василь Тропінін', 'Костянтин Маковський');
+     	questionObj[22]= new QuestionFun('images/Хустка.png', 'Хто є автор картини "Дівчина в хустці"?', 'Володитир Боровіковський', 'Ілля Рєпін', 'Сергій Васильківський', 'Михайло Бойчук', 'Микола Бодаревський', 'художнік невідомий');
+     	//var questionObj[23]= new QuestionFun('image/Gim.png', '', '', '', '', '', '', '', );
+     	//var questionObj[24]= new QuestionFun('image/Gim.png', '', '', '', '', '', '', '', );
+     	
+     	function Answering(){
+     			alert("начало Answering");
+     			document.getElementById('pictureId').src=questionObj[i].sorce;  
+     			document.getElementById('question').innerHTML=questionObj[i].question;
+     			document.getElementById('ans1').innerHTML=questionObj[i].answer1;
+     			document.getElementById('ans2').innerHTML=questionObj[i].answer2;
+     			document.getElementById('ans3').innerHTML=questionObj[i].answer3;
+     			document.getElementById('ans4').innerHTML=questionObj[i].answer4;
+     			alert("промежуточный");
+     			document.getElementById('ans5').innerHTML=questionObj[i].answer5;
+     			document.getElementById('ans6').innerHTML=questionObj[i].answer6;
+     			alert("внатуре" + " " + i);
+     			if(i>24){document.write("break");}
+     			i=i+1;
+     		}
+     
+     </script>
   </body>
 </html>
