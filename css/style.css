@@ -2,7 +2,7 @@
 body{
 	font-family: verdana, sans-serif;
 	font-size: 12px;
-	background-color: #fdfcfb;
+	background:  linear-gradient(white, #a9f5f2, white);
 	font-weight: normal;
 }
 .picture{
@@ -56,5 +56,43 @@ li button:hover{
 }
 
 @media screen and (max-width: 768px) {
+	body{ background: linear-gradient(white, #a9f5f2, white, #a9f5f2, white);}
 	.picture, .questions {width: 96%;}
+
+}
+
+#finish {
+	visibility: hidden;
+	width: 310px;
+	height: 500px;
+	position: absolute;
+	top: 70px;
+	left: 50%;
+	background-color: #e0f2f7;
+	border: 8px solid red;
+	border-radius: 29px;
+}
+#finish h4{
+	margin: 7px 28px 5px 28px;
+}
+#finish img{
+	width: 200px;
+	height: auto;
+	display:block;
+  	margin: auto;
+	
+}
+#finish p{
+	font-size: 14px;
+	margin: 12px;
+}
+#finish button{
+	width: 80%;
+	height: 36px;
+	margin-top: 4px;
+	display:block;
+ 	 margin: auto;
+	background-color: #bde0ff; 
+	border-radius: 6px;
+
 }

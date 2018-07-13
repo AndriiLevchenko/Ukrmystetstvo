@@ -27,6 +27,15 @@
     </div>
 		
 	 <button type='button' onclick="Answering()">Внаткре следующий вопрос</button>
+	
+	<div id='finish'>
+	 	<h4 id='ukrZhivopys'>Український живопис</h4>
+	 	<img id='pictureFinish' src='images/Дівчина.png'>
+	 	<p>Результат проходження вами тесту на знання українського живаопису становить<span id='rezultat'></span>%. </p>
+	 	<p>Бажаємо вам бути ще більш обізнаними в сфері українського мистецтва і надалі розвиватись в цьому напрямку.</p>
+	 	<button type='button' onclick='showResults()'>OK</button>
+	 </div>
+
      <script>
      var i=0; var vidpovidSum=0;
         function QuestionFun(sorce, question, answer0, answer1, answer2, answer3, answer4, answer5, pravda){
@@ -79,8 +88,7 @@
      			document.getElementById('ans3').innerHTML=questionObj[i].answer4;
      			document.getElementById('ans4').innerHTML=questionObj[i].answer5;
      			document.getElementById('ans5').innerHTML=questionObj[i].answer6;
-     		
-     			//alert("внатуре" + " " + i);
+     	
      			if(i>24){document.write("break");}
      			i=i+1;
      		}
