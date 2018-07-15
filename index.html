@@ -26,16 +26,16 @@
     		<h4 id='pictureName'></h4>
     	</div>	 
     </div>
-    	<div id=pictureName2>внатуре</div>
+    <div id=pictureName2>   внатуре    </div>
     <div class='questions'>
     	<h4 id='question'></h4>
     	<ul>
-    		<li><button type='button' id='ans0' onclick='return Obrabotka(this)'></button></li>
-    		<li><button type='button' id='ans1' onclick='return Obrabotka(this)'></button></li>
-    		<li><button type='button' id='ans2' onclick='return Obrabotka(this)'></button></li>
-    		<li><button type='button' id='ans3' onclick='return Obrabotka(this)'></button></li>
-   			<li><button type='button' id='ans4' onclick='return Obrabotka(this)'></button></li>
-   			<li><button type='button' id='ans5' onclick='return Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans0' onclick='Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans1' onclick='Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans2' onclick='Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans3' onclick='Obrabotka(this)'></button></li>
+   			<li><button type='button' id='ans4' onclick='Obrabotka(this)'></button></li>
+   			<li><button type='button' id='ans5' onclick='Obrabotka(this)'></button></li>
     	</ul>
     </div>
 	
@@ -50,16 +50,18 @@
 	 <div class='ending'>
   		<h1>Українське образотворче мистецтво. Вірні відповіді.</h1>
   		<div class='stroka'>
-  			<div id='stroka__i'></div>
-  			<div id='stroka__foto'></div>
-  			<div id='stroka__vidpovid'></div>  			
+  			<div class='stroka__i'></div>
+  			<div class='stroka__foto'><img src='images/коньночь.png' alt='virna'></div>
+  			<div class='stroka__vidpovid'></div>  		
   		</div>
+  		<button type='button' class='buttonAgain' onclick='Beginning()'>Пройти тест ще раз</button>
   	</div>
 
      <script>
      var i=0; var vidpovidSum=0;
      	function Beginning(){
      		document.getElementsByClassName('beginning')[0].style.display='none';
+     		document.getElementsByClassName('ending')[0].style.display='none';
      		Answering();
      	}
         function QuestionFun(sorce, question, answer0, answer1, answer2, answer3, answer4, answer5, pravda, nazva){
@@ -77,9 +79,9 @@
         var questionObj = new Array();
         questionObj[0]= new QuestionFun('images/Жнива.png', 'Хто є автор картини?', 'Тетяна Яблонська', 'Михайло Дмитренко',           'Сергій Васильківський', 'Сергій Світославський', 'Петро Левченко', 'Микола Пимоненко', 5, '"Жнива"');
     	questionObj[1]= new QuestionFun('images/Звір.png', 'Художниця яка малювала звірів, але ніколи не була в зоопарку',            'Людмила Мєшкова', 'Марія Приймаченко', 'Євгенія Гапчинська', 'Тетяна Яблонська', 'Галина Москвитіна', 'Галина Гедзєвич',   1, '"Горботрус"');
-     	questionObj[2]= new QuestionFun('images/Ukraine.png', 'Який всесвітньо відомий художник свого часу народився на території сучасної  України', 'Василь Кандинський', 'Пабло Пікассо', 'Сальвалор Далі', 'Енді Уорхолл', 'Андрій Рубльов',             'Михайло Врубель', 3, 'карта сучасної України');
+     	questionObj[2]= new QuestionFun('images/Ukraine.png',                                                                          'Який всесвітньо відомий художник свого часу народився на території сучасної  України?', 'Василь Кандинський',             'Пабло Пікассо', 'Сальвалор Далі', 'Енді Уорхолл', 'Андрій Рубльов', 'Михайло Врубель', 3, 'карта сучасної України');
      	questionObj[3]= new QuestionFun('images/People.png', 'Хто є автор двох відомих картин під загальною назвою "Один художник -два народи"?', 'Василь Кандинський', 'Іван Айвазовський', 'Михайло Шишкін', 'Ілля Рєпін', 'Ілля Глазунов', 'Казімір Малєвіч', 3, '"..... .......... "');
-     	questionObj[4]= new QuestionFun('images/Ніч.png', 'Він вважав своїм завданням писати море лише з натури.', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 2, '"Місячна ніч"');
+     	questionObj[4]= new QuestionFun('images/Ніч.png', 'Він вважав своїм завданням писати море лише з натури.', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 1, '"Місячна ніч"');
      	questionObj[5]= new QuestionFun('images/Нічмалюнок.png', 'Хто є автор малюнка, на якому зображена місячна ніч?', 'Ілля Рєпін', 'Іван Айвазовський', 'Руфін Судковський',  'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 5,                         '"Місячна ніч на Кос-Аралі"');
      	questionObj[6]= new QuestionFun('images/Геній.png', 'Кого з українських художників називаюь генієм сучасності?', 'Олег Тістол','Анатолій Криволап', 'Ілля Чичкан', 'Арсен Савадов', 'Іван Марчук', 'Олександр Ройтбурд', 4, '"Ніч в степу"');
      	questionObj[7]= new QuestionFun('images/Дівчина.png', 'Хто є автор картини, створеній в менері малювання широким пензлем?',    'Олександр Мурашко',   'Микола Пимоненко', 'Сергій Васильківський', 'Опанас Рокачевський', 'Микола Бодаревський',          'Ілля Рєпін',  0, '"Дівчина в червоному капелюсі"');
@@ -111,25 +113,52 @@
      			document.getElementById('ans4').innerHTML=questionObj[i].answer4;
      			document.getElementById('ans5').innerHTML=questionObj[i].answer5;
      			document.getElementById('pictureName').innerHTML=questionObj[i].nazva;
+     		//alert('после выполнения всего Answering i по-прежнему= ' + i);
      		}
 
      	function Obrabotka(vyborvarianta){
      			
      			var vidpovid=vyborvarianta.id.slice(3);     			
      			var vidpovidVirna=questionObj[i].pravda;
-     	    	vidpovidSum=vidpovidSum+Number(vidpovid==vidpovidVirna);	
-     			alert(" это вопрос i= " + i + "vidpovid" + " " + vidpovid + "vidpovidVirna" + " " + vidpovidVirna );
-     			//alert("это вопрос про" + questionObj[i].question) ;			
+     			var spivpadinnia = Number(vidpovid==vidpovidVirna);	
+     		//	alert(" i= " + i + " spivpadinnia= " + spivpadinnia);
+     	    	vidpovidSum=vidpovidSum+spivpadinnia;	
+     		//	alert(" это вопрос i= " + i + " vidpovid= "  + vidpovid + " " +" vidpovidVirna= "  + vidpovidVirna );
      				document.getElementById('pictureName2').innerHTML=vidpovidSum;
-     				if(i>2){   document.getElementById('rezultat').innerHTML=Math.round(vidpovidSum*4);
+     				if(i>7){   document.getElementById('rezultat').innerHTML=Math.round(vidpovidSum*4);
      							document.getElementById('finish').style.display='block';}
+     			  if (spivpadinnia) {createResults();	}	
+     		//	  alert('это мы вернулись из createResults и i будет увеличена на 1, сейчас і по-прежнему=' + i);
      				i=i+1;
+     		//		alert ('а сейчас после увеличения і уже =' + i + '.    Уходим на Answering');
      			Answering();   					
      		}
+     	function createResults(){
+     		//alert("запустился createResults");
+     			var clonedNode = document.getElementsByClassName('stroka')[0].cloneNode(true);
+				document.getElementsByClassName('ending')[0].appendChild(clonedNode);
+     			document.getElementsByClassName('stroka__i')[vidpovidSum].innerHTML=i;
+     		//	alert('добавлен номер строки');
+     		//alert(document.getElementsByClassName('stroka__foto'));
+     		//alert(document.getElementsByClassName('stroka__foto')[i] + " i= " + i);
+     		//alert( document.getElementsByTagName('img')[i].src);
+     		//alert(questionObj[i].sorce);
+     			document.getElementsByClassName('stroka__foto')[vidpovidSum].getElementsByTagName('img')[0].src=questionObj[i].sorce;  
+     		//	alert('изменена картинка строки');
+     			document.getElementsByClassName('stroka__vidpovid')[vidpovidSum].innerHTML=questionObj[i].question;
+     		//	alert('закончился createResults с i= ' + i + ', сейчас будет return');	
+     		
+			return;
+     	}
 
      	function showResults(){
+     			document.getElementsByClassName('stroka')[0].style.display='none';
      			document.getElementById('finish').style.display='none';
+     			var buttonAgain = document.getElementsByClassName('buttonAgain')[0].cloneNode(true);
+     			document.getElementsByClassName('ending')[0].appendChild(buttonAgain);
+     			document.getElementsByClassName('buttonAgain')[0].style.display='none';
      			document.getElementsByClassName('ending')[0].style.display='block';
+     			window.i=0; window.vidpovidSum=0;
      	}	
      
      </script>

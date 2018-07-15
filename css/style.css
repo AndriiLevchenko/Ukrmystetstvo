@@ -11,9 +11,8 @@ body{
     left: 0;
     right: 0;
 	width: 80%;
-	height: 80%;
 	position: absolute;
-	padding: 45px;
+	padding: 43px;
 	margin: auto;
 	background: linear-gradient(#FFF8DC, #DEB887, #FFF8DC);
 	border: 5px solid SaddleBrown;
@@ -21,18 +20,18 @@ body{
 	z-index: 2;
 }
 .ending {
-	/*display: none;*/
+	display: none;
 }
 h1{
 	font-family: 'NarbutClassicRegular';
 }
 .beginning p{
 	font-size: 17px;
-	 text-indent: 1.5em;
+	text-indent: 1.5em;
 }
-.beginning button {
+.beginning button, .ending button{
 	width: 86%;
-	height: 13%;
+	height: 11%;
 	margin: auto;
 	padding: 11px;
 	font-size: 2.5em;
@@ -58,15 +57,15 @@ h1{
 	top: 0; left: 0; right: 0; 
 }
 .picturePicture img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 .pictureName{
 	position: absolute;
@@ -112,8 +111,7 @@ li  button{
 	text-align: left;
 	vertical-align: middle;
 }
-
-li button:hover{
+	li button:hover{
 	background-color: #bde0ff;
 }
 
@@ -122,6 +120,8 @@ li button:hover{
 	.picture, .questions {width: 96%; min-height: 288px;}
 	li  button{ height: 32px; margin: 2px}
 	.beginning p{font-size: 1.0em;}
+	#stroka__vidpovid{font-size: 8px; padding: 1px;}
+	.beginning, .ending {width: 76%;}
 }
 
 #finish {
@@ -151,7 +151,7 @@ li button:hover{
 	
 }
 #finish p{
-	 text-indent: 1.1em;
+	text-indent: 1.1em;
 	font-size: 14px;
 	margin: 12px;
 }
@@ -178,24 +178,37 @@ span{
 .stroka{
 	position: relative;
 	width: 94%;
-	height: 11%;
-	background-color: yellow;
-	border: 1px solid black;
-	margin: 3px;
+	height: 45px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	margin: 4px;
 }
-#stroka__i{
+.stroka__i{
 	float:left;
-	width: 11%;
+	width: 5%;
+	height: 100%;
+	padding: 2px;
+	font-size: 1.5em;
+	font-family: 'NarbutClassicRegular';
+	text-align: center;
+}
+.stroka__foto{
+	position: relative;
+	float:left;
+	width: 13%;
 	height: 100%;
 }
-#stroka__foto{
-	float:left;
-	width: 17%;
-	height: 100%;
-	background-color: pink;
+.stroka__foto img{
+	display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
 }
-#stroka__vidpovid{
+.stroka__vidpovid{
 	float:left;
-	width: 65%;
+	width: 69%;
 	height: 100%;
+	padding: 3px;
 }
