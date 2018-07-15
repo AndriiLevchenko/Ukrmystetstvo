@@ -5,40 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тест на знання Українського образотворчого мистецтва</title>
-
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/narbut-classic" type="text/css"/>
   </head>
   <body>
-  	<h1> Заголовок внатуре   </h1>
+  	<h1> Українське образотворче мистецтво  </h1>
+  	<div class='beginning'>
+  		<h1>Українське образотворче мистецтво</h1>
+  		<p>Розвиток образотворчого мистецтва в Україні веде відлік із прадавніх часів. Знахідки археологів, зокрема, періоду трипільської та скіфської культур, вирізняються майстерною технікою виконання і засвідчують високий мистецький рівень витворів тодішніх жителів сучасної території України. </p>
+  		<p>Звідти і дотепер українська традиція подарувала ціле гроно талановитих майстрів живопису, які у своїй творчості розвивають барвисті й фантастичні образи, породжені уявою та реалізовані за законами стилістики народного малярства, українського декоративного розпису, сучасних образотворчіх законів.</p>
+  		<p>Ви маєте змогу пройти тест на знання Українського образосворчого мистецтва, який дозволить перевірити свої знання по згаданій темі та підвищити свою обізнаність в неповторному барвистому світі образотворчого мистецтва.</p>
+  		<button type='button' onclick='Beginning()'>Тест</button>
+  	</div>
+
     <div class='picture'>
-    	<img id='pictureId' src='images/коньночь.png' alt='picture'>
-    	<h4 id='picturename'>Назва картини</h4> 
+    	<div class=picturePicture>
+    		<img id='pictureId' src='images/коньночь.png' alt='picture'>
+    	</div>
+    	<div class=pictureName>	
+    		<h4 id='pictureName'></h4>
+    	</div>	 
     </div>
+    	<div id=pictureName2>внатуре</div>
     <div class='questions'>
-    	<h4 id='question'>Назва питання, питання безпосередньо</h4>
+    	<h4 id='question'></h4>
     	<ul>
-    		<li><button type='button' id='ans0' onclick='return Obrabotka(this)'>Відповідь 1</button></li>
-    		<li><button type='button' id='ans1' onclick='return Obrabotka(this)'>Відповідь 2</button></li>
-    		<li><button type='button' id='ans2' onclick='return Obrabotka(this)'>Відповідь 3</button></li>
-    		<li><button type='button' id='ans3' onclick='return Obrabotka(this)'>Відповідь 4</button></li>
-   			<li><button type='button' id='ans4' onclick='return Obrabotka(this)'>Відповідь 5</button></li>
-   			<li><button type='button' id='ans5' onclick='return Obrabotka(this)'>Відповідь 6</button></li>
+    		<li><button type='button' id='ans0' onclick='return Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans1' onclick='return Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans2' onclick='return Obrabotka(this)'></button></li>
+    		<li><button type='button' id='ans3' onclick='return Obrabotka(this)'></button></li>
+   			<li><button type='button' id='ans4' onclick='return Obrabotka(this)'></button></li>
+   			<li><button type='button' id='ans5' onclick='return Obrabotka(this)'></button></li>
     	</ul>
     </div>
-		
-	 <button type='button' onclick="Answering()">Внаткре следующий вопрос</button>
 	
 	<div id='finish'>
 	 	<h4 id='ukrZhivopys'>Український живопис</h4>
 	 	<img id='pictureFinish' src='images/Дівчина.png'>
-	 	<p>Результат проходження вами тесту на знання українського живаопису становить<span id='rezultat'></span>%. </p>
-	 	<p>Бажаємо вам бути ще більш обізнаними в сфері українського мистецтва і надалі розвиватись в цьому напрямку.</p>
-	 	<button type='button' onclick='showResults()'>OK</button>
+	 	<p>Результат проходження тесту на знання українського образотворчого мистецтва становить <span id='rezultat'></span> %. </p>
+	 	<p>Бажаємо вам бути ще ближче до художньої справи і взагалі до мистецтва.</p>
+	 	<button type='button' onclick='showResults()'><span>OK</span></button>
 	 </div>
+
+	 <div class='ending'>
+  		<h1>Українське образотворче мистецтво. Вірні відповіді.</h1>
+  		<div class='stroka'>
+  			<div id='stroka__i'></div>
+  			<div id='stroka__foto'></div>
+  			<div id='stroka__vidpovid'></div>  			
+  		</div>
+  	</div>
 
      <script>
      var i=0; var vidpovidSum=0;
-        function QuestionFun(sorce, question, answer0, answer1, answer2, answer3, answer4, answer5, pravda){
+     	function Beginning(){
+     		document.getElementsByClassName('beginning')[0].style.display='none';
+     		Answering();
+     	}
+        function QuestionFun(sorce, question, answer0, answer1, answer2, answer3, answer4, answer5, pravda, nazva){
         	this.sorce=sorce;
         	this.question=question;
         	this.answer0=answer0;
@@ -48,58 +72,65 @@
         	this.answer4=answer4;
         	this.answer5=answer5;
         	this.pravda=pravda;
+        	this.nazva=nazva;
         }
         var questionObj = new Array();
-        questionObj[0]= new QuestionFun('images/Gim.png', 'Хто є автор цієї картини?', 'Марія Приймаченко', 'Микола Пимоненко', 'Тетяна Яблонська', 'Олександр Мурашко',  'Олекса Грищенко', 'Михайло Дмитренко', 2);
-     	questionObj[1]= new QuestionFun('images/коньночь.png', 'За скільки була продана найдорожча картина українського художника?',    '10500$', '11100$', '12200$', '51100$', '124400$', '152200$', 2);
-     	questionObj[2]= new QuestionFun('images/Ukraine.png', 'Який всесвітньо відомий художник свого часу народився на території сучасної  України', 'Василь Кандинський', 'Пабло Пікассо', 'Сальвалор Далі', 'Енді Уорхолл', 'Андрій Рубльов', 'Михайло Врубель', 2);
-     	questionObj[3]= new QuestionFun('images/People.png', 'Хто є автором двох відомих картин під загальною назвою "Один художнік -два народи"?', 'Василь Кандинський', 'Тарас Шевченко', 'Михайло Шишкін', 'Ілля Рєпін', 'Ілля Глазунов', 'Казімір Малєвіч', 2);
-     	
-     	alert(questionObj[1].answer1 + " " + questionObj[3].sorce);
-
-     	questionObj[4]= new QuestionFun('images/Ніч.png', 'Хто є автор картини "Місячна ніч"?', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 2);
-     	questionObj[5]= new QuestionFun('images/Нічмалюнок.png', 'Хто є автором малюнка, на якому зображена місячна ніч?', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 2);
-     	questionObj[6]= new QuestionFun('images/Геній.png', 'Кого з українських художників називаюь генієм сучасності', 'Анатолій Криволап', 'Ілля Чичкан', 'Арсен Савадов', 'Іван Марчук', 'Олег Тістол', 'Олександр Ройтбурд', 2);
-     	questionObj[7]= new QuestionFun('images/Дівчина.png', 'Хто є автор картини "Дівчина у червоній шляпі?"', 'Олександр Мурашко',   'Микола Пимоненко', 'Сергій Васильківський', 'Ілля Рєпін', 'Микола Бодаревський', 'Опанас Рокачевський', 2);
-     	questionObj[8]= new QuestionFun('images/Жнива.png', 'Хто є автор картини?', 'Тетяна Яблонська', 'Михайло Дмитренко', 'Сергій Васильківський', 'Сергій Світославський', 'Петро Левченко', 'Микола Пимоненко', 2);
-     	questionObj[9]= new QuestionFun('images/Дервіш.png', 'Хто є автор малюнка "Танок дервіша"?', 'Микола Пимоненко', 'Олександр Мурашко', 'Опанас Рокачевський', 'Олекса Грищенко', 'Давид Бурлюк', 'Сергій Васильківський', 2);
-     	questionObj[10]= new QuestionFun('images/Квадрат.png', 'Якої картини немає серед творів Казимира Малєвіча?', 'Червоний квадрат', 'Чорне коло', 'Чорний хрест', 'Біле на білому', 'Чорний квадрат і червоний квадрат', 'Червоне коло', 2);
-     	questionObj[11]= new QuestionFun('images/Звір.png', 'Художниця яка малювала звірів, але ніколи не була в зоопарку', 'Людмила Мєшкова', 'Марія Приймаченко', 'Євгенія Гапчинська', 'Тетяна Яблонська', 'Галина Москвитіна', 'Галина Гедзєвич', 2);
-     	questionObj[12]= new QuestionFun('images/Квіти.png', 'Самобутня художниця, в якої за її словами добре виходять квіти, а пейзажі не дуже.', 'Марія Приймаченко', 'Тетяна Яблонська', 'Катерина Білокур', 'Зинаїда Серебрякова', 'Марина Михайлошина', 'Марія Ралко', 2);
-     	questionObj[13]= new QuestionFun('images/Прощавай.png', 'Картина одного із засновників українського постмодернізму Олександра Ройтбурда називається: "Прощавай, ..."', 'Мікеланджело', 'Рафаель', 'Караваджо', 'Леонардо', 'Джото', 'Сандро');
-     	questionObj[14]= new QuestionFun('images/Каін.png', 'Автор картини "Каін"', 'Рембрандт', 'Антон Лосенко', 'Тіциан', 'Аполлон Мокрицький', 'Іван Сошенко', 'Рубенс', 2);
-     	questionObj[15]= new QuestionFun('images/Лопухіна.png', 'Автор картини "Портрет Марії Лопухіної', 'Володитир Боровіковський', 'Ілля Рєпін', 'Сергій Васильківський', 'Михайло Бойчук', 'Іван Сошенко', 'Аполлон Мокрицький', 2);
-     	questionObj[16]= new QuestionFun('images/Вуста.png', 'Видатний український художник, який втративши кисті рук створив більше 3000 робіт', 'Вудон Баклицький', 'Давид Беккер', 'Мойсей Абрамович', 'Іван Труш', 'Микола Бідняк', 'Давид Бурлюк', 2);
-     	questionObj[17]= new QuestionFun('images/Заповіт.png', 'Колекцію картин (67 шт) якого художніка бкло повернуто згідно заповіту з Нью-Йорка в Україну?', 'Олекса Грищенко', 'Олександр Мурашко', 'Архип Куїнджі', 'Сергій Світославський', 'Андрій Варгола',     'Сергій Васильківський', 2);
-     	questionObj[18]= new QuestionFun('images/Красуня.png', 'Художниця, життєве кредо якої: "Переступай страх. Дій"', 'Олена Левченко', 'Жанна Кадирова', 'Катерина  Косьяненко', 'Адріана Галецька', 'Марина Скугарєва', 'Євгенія Гапчинська', 2);
-     	questionObj[19]= new QuestionFun('images/Петриківка.png', 'Видатна майстриня петриківського розпису', 'Ала Алексеєва', 'Тая Галаган', 'Тетяна Галькун', 'Оксана Мась', 'Влада Ралко', 'Ганна Самарська', 2);
-     	questionObj[20]= new QuestionFun('images/Щирець.png', 'Реаліст, суттєва кількість робіт якого була просто знищена окупаційною владою', 'Олександр Мурашко', 'Олексій Поляков', 'Іван Марчук', 'Федір Захаров', 'Олександр Гнилицький', 'Осип Курилас', 2);
-     	questionObj[21]= new QuestionFun('images/Дівчина.png', 'Картина "УКРАЇНСЬКА  ДІВЧИНА" (1892) продана на аукціоні в Лондоні у 2005 році за 86 000 фунтів. Хто автор?', 'Микола Бодаревський', 'Микола Брянський', 'Микола Рачків', 'Ілля Рєпін', 'Василь Тропінін', 'Костянтин Маковський', 2);
-     	questionObj[22]= new QuestionFun('images/Хустка.png', 'Хто є автор картини "Дівчина в хустці"?', 'Володимир Боровіковський',    'Ілля Рєпін', 'Сергій Васильківський', 'Михайло Бойчук', 'Микола Бодаревський', 'художнік невідомий', 2);
-     	questionObj[23]= new QuestionFun('images/Українка.png', 'Хто є автор картини "Українка біля тину"?', 'Опанас Рокачевський',     'Харитон Платонов', 'Костянтин Трутовський', 'Ілля Рєпін', 'Вітольд Монастирський', 'Антоніна Маєвська', 2);
-     	questionObj[24]= new QuestionFun('images/Вінок.png', 'Хто є автор картини "Прикрашання вінком"?', 'Костянтин Трутовський', 'Микола Пимоненко', 'Михайло Бойчук', 'Харитон Платонов', 'Олександр Мурашко', 'художнік невідомий', 2);
+        questionObj[0]= new QuestionFun('images/Жнива.png', 'Хто є автор картини?', 'Тетяна Яблонська', 'Михайло Дмитренко',           'Сергій Васильківський', 'Сергій Світославський', 'Петро Левченко', 'Микола Пимоненко', 5, '"Жнива"');
+    	questionObj[1]= new QuestionFun('images/Звір.png', 'Художниця яка малювала звірів, але ніколи не була в зоопарку',            'Людмила Мєшкова', 'Марія Приймаченко', 'Євгенія Гапчинська', 'Тетяна Яблонська', 'Галина Москвитіна', 'Галина Гедзєвич',   1, '"Горботрус"');
+     	questionObj[2]= new QuestionFun('images/Ukraine.png', 'Який всесвітньо відомий художник свого часу народився на території сучасної  України', 'Василь Кандинський', 'Пабло Пікассо', 'Сальвалор Далі', 'Енді Уорхолл', 'Андрій Рубльов',             'Михайло Врубель', 3, 'карта сучасної України');
+     	questionObj[3]= new QuestionFun('images/People.png', 'Хто є автор двох відомих картин під загальною назвою "Один художник -два народи"?', 'Василь Кандинський', 'Іван Айвазовський', 'Михайло Шишкін', 'Ілля Рєпін', 'Ілля Глазунов', 'Казімір Малєвіч', 3, '"..... .......... "');
+     	questionObj[4]= new QuestionFun('images/Ніч.png', 'Він вважав своїм завданням писати море лише з натури.', 'Іван Айвазовський', 'Руфін Судковський', 'Ілля Рєпін', 'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 2, '"Місячна ніч"');
+     	questionObj[5]= new QuestionFun('images/Нічмалюнок.png', 'Хто є автор малюнка, на якому зображена місячна ніч?', 'Ілля Рєпін', 'Іван Айвазовський', 'Руфін Судковський',  'Архип Куїнджи', 'Іван Крамськой', 'Тарас Шевченко', 5,                         '"Місячна ніч на Кос-Аралі"');
+     	questionObj[6]= new QuestionFun('images/Геній.png', 'Кого з українських художників називаюь генієм сучасності?', 'Олег Тістол','Анатолій Криволап', 'Ілля Чичкан', 'Арсен Савадов', 'Іван Марчук', 'Олександр Ройтбурд', 4, '"Ніч в степу"');
+     	questionObj[7]= new QuestionFun('images/Дівчина.png', 'Хто є автор картини, створеній в менері малювання широким пензлем?',    'Олександр Мурашко',   'Микола Пимоненко', 'Сергій Васильківський', 'Опанас Рокачевський', 'Микола Бодаревський',          'Ілля Рєпін',  0, '"Дівчина в червоному капелюсі"');
+     	questionObj[8]= new QuestionFun('images/Gim.png', 'На яке місто виходять вікна на картині Тетяни  Яблонської?', 'Харків',      'Чернівці', 'Львів', 'Донецьк',  'Курськ', 'Київ', 5, '"Ранок"');
+     	questionObj[9]= new QuestionFun('images/Дервіш.png', 'Хто є автор малюнка?', 'Микола Пимоненко', 'Олександр Мурашко',          'Опанас Рокачевський', 'Олекса Грищенко', 'Давид Бурлюк', 'Сергій Васильківський', 3, '"Танок дервіша"');
+     	questionObj[10]= new QuestionFun('images/Квадрат.png', 'Якої картини немає серед творів Казимира Малєвіча?',                   'Червоний квадрат', 'Чорне коло', 'Чорний хрест', 'Біле на білому', 'Чорний квадрат і червоний квадрат', 'Червоне коло', 5, '"Чорний квадрат"');
+     	questionObj[11]= new QuestionFun('images/Квіти.png', 'Самобутня художниця, в якої за її словами добре виходять квіти, а пейзажі не дуже.', 'Марія Приймаченко', 'Тетяна Яблонська', 'Катерина Білокур', 'Зинаїда Серебрякова', 'Марина Михайлошина', 'Марія Ралко', 2, '"Квіти за тином"');
+     	questionObj[12]= new QuestionFun('images/Степ.png', 'Який колір з його емоційною палітрою став візитівкою Анатолія Криволапа?', 'синій', 'сірий', 'чорний', 'рожевий', 'червоний', 'фіолетовий', 4, '"Степ"');
+     	questionObj[13]= new QuestionFun('images/Прощавай.png', 'Картина одного із засновників українського постмодернізму Олександра Ройтбурда називається: "Прощавай, ..."', 'Мікеланджело', 'Рафаель', 'Караваджо', 'Леонардо', 'Джото', 'Сандро', 2,         '"Прощавай, ............"');
+     	questionObj[14]= new QuestionFun('images/Каін.png', 'Хто є автор картини?', 'Рембрандт', 'Антон Лосенко', 'Тіциан', 'Рубенс',  'Аполлон Мокрицький', 'Іван Сошенко', 1, '"Каін"');
+     	questionObj[15]= new QuestionFun('images/Лопухіна.png', 'Хто є автор портрету жінки з таємничим поглядом?',                    'Володимир Боровіковський', 'Ілля Рєпін', 'Сергій Васильківський', 'Михайло Бойчук', 'Іван Сошенко', 'Аполлон Мокрицький', 0, '"Портрет Марії Лопухіної"');
+     	questionObj[16]= new QuestionFun('images/Вуста.png', 'Видатний український художник, який втративши кисті рук, створив більше 3000 робіт', 'Вудон Баклицький', 'Давид Беккер', 'Мойсей Абрамович', 'Іван Труш', 'Микола Бідняк', 'Давид Бурлюк', 4,      '"Гайдамаки"');
+     	questionObj[17]= new QuestionFun('images/Заповіт.png', 'Колекцію картин (67 шт) якого художніка було повернуто згідно заповіту з США в Україну?', 'Олекса Грищенко', 'Олександр Мурашко', 'Архип Куїнджі', 'Сергій Світославський', 'Андрій Варгола',     'Сергій Васильківський', 0, '"Вітрильник"');
+     	questionObj[18]= new QuestionFun('images/Красуня.png', 'Художниця, життєве кредо якої: "Переступай страх. Дій"', 'Олена Левченко', 'Жанна Кадирова', 'Катерина  Косьяненко', 'Адріана Галецька', 'Марина Скугарєва', 'Євгенія Гапчинська', 5, '');
+     	questionObj[19]= new QuestionFun('images/Петриківка.png', 'Видатна майстриня петриківського розпису', 'Ала Алексеєва', 'Тая Галаган', 'Тетяна Галькун', 'Оксана Мась', 'Влада Ралко', 'Ганна Самарська', 5, '');
+     	questionObj[20]= new QuestionFun('images/Щирець.png', 'Реаліст, суттєва кількість робіт якого була просто знищена окупаційною владою', 'Володимир Орловський', 'Олексій Поляков', 'Іван Марчук', 'Федір Захаров', 'Олександр Гнилицький', 'Осип Курилас', 5, '"На Гуцульщині"' );
+     	questionObj[21]= new QuestionFun('images/Дівчина2.png', 'Картина продана на аукціоні в Лондоні у 2005 році за 86 000 фунтів. Хто автор?', 'Микола Бодаревський', 'Микола Брянський', 'Микола Рачків', 'Ілля Рєпін', 'Василь Тропінін', 'Костянтин Маковський', 0, '"Українська дівчина"');
+     	questionObj[22]= new QuestionFun('images/Хустка.png', 'Хто є автор картини?', 'Володимир Боровіковський',    'Ілля Рєпін',     'Сергій Васильківський', 'Михайло Бойчук', 'Микола Бодаревський', 'художнік невідомий', 5, '"Дівчина в хустці"');
+     	questionObj[23]= new QuestionFun('images/Українка.png', 'Хто є автор картини?', 'Опанас Рокачевський',    'Харитон Платонов',  'Костянтин Трутовський', 'Ілля Рєпін', 'Вітольд Монастирський', 'Антоніна Маєвська', 3, '"Українка біля тину"');
+     	questionObj[24]= new QuestionFun('images/Вінок.png', 'Хто є автор картини?', 'Костянтин Трутовський', 'Микола Пимоненко',      'Михайло Бойчук', 'Володимир Орловський', 'Олександр Мурашко', 'художник невідомий', 0, '"Прикрашання вінком"');
      	
      	function Answering(){
      			document.getElementById('pictureId').src=questionObj[i].sorce;  
      			document.getElementById('question').innerHTML=questionObj[i].question;
-     			document.getElementById('ans0').innerHTML=questionObj[i].answer1;
-     			document.getElementById('ans1').innerHTML=questionObj[i].answer2;
-     			document.getElementById('ans2').innerHTML=questionObj[i].answer3;
-     			document.getElementById('ans3').innerHTML=questionObj[i].answer4;
-     			document.getElementById('ans4').innerHTML=questionObj[i].answer5;
-     			document.getElementById('ans5').innerHTML=questionObj[i].answer6;
-     	
-     			if(i>24){document.write("break");}
-     			i=i+1;
+     			document.getElementById('ans0').innerHTML=questionObj[i].answer0;
+     			document.getElementById('ans1').innerHTML=questionObj[i].answer1;
+     			document.getElementById('ans2').innerHTML=questionObj[i].answer2;
+     			document.getElementById('ans3').innerHTML=questionObj[i].answer3;
+     			document.getElementById('ans4').innerHTML=questionObj[i].answer4;
+     			document.getElementById('ans5').innerHTML=questionObj[i].answer5;
+     			document.getElementById('pictureName').innerHTML=questionObj[i].nazva;
      		}
 
-     		function Obrabotka(vyborvarianta){
+     	function Obrabotka(vyborvarianta){
+     			
      			var vidpovid=vyborvarianta.id.slice(3);     			
      			var vidpovidVirna=questionObj[i].pravda;
-     	    	vidpovidSum=vidpovidSum+Number(vidpovid==vidpovidVirna);		
-     				document.getElementById('picturename').innerHTML=vidpovidSum;
-     					
+     	    	vidpovidSum=vidpovidSum+Number(vidpovid==vidpovidVirna);	
+     			alert(" это вопрос i= " + i + "vidpovid" + " " + vidpovid + "vidpovidVirna" + " " + vidpovidVirna );
+     			//alert("это вопрос про" + questionObj[i].question) ;			
+     				document.getElementById('pictureName2').innerHTML=vidpovidSum;
+     				if(i>2){   document.getElementById('rezultat').innerHTML=Math.round(vidpovidSum*4);
+     							document.getElementById('finish').style.display='block';}
+     				i=i+1;
+     			Answering();   					
      		}
+
+     	function showResults(){
+     			document.getElementById('finish').style.display='none';
+     			document.getElementsByClassName('ending')[0].style.display='block';
+     	}	
      
      </script>
   </body>

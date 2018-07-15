@@ -1,22 +1,85 @@
 
 body{
-	font-family: verdana, sans-serif;
+	font-family:  verdana, sans-serif;
 	font-size: 12px;
 	background:  linear-gradient(white, #a9f5f2, white);
 	font-weight: normal;
 }
+.beginning, .ending {
+    display: block;
+    top: 10px;
+    left: 0;
+    right: 0;
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	padding: 45px;
+	margin: auto;
+	background: linear-gradient(#FFF8DC, #DEB887, #FFF8DC);
+	border: 5px solid SaddleBrown;
+	border-radius: 38px;
+	z-index: 2;
+}
+.ending {
+	/*display: none;*/
+}
+h1{
+	font-family: 'NarbutClassicRegular';
+}
+.beginning p{
+	font-size: 17px;
+	 text-indent: 1.5em;
+}
+.beginning button {
+	width: 86%;
+	height: 13%;
+	margin: auto;
+	padding: 11px;
+	font-size: 2.5em;
+	border: 1px solid grey;
+	border-radius: 13px;
+
+}
 .picture{
+	position: relative;
 	width: 47%;
+	min-height: 440px;
 	background-color: #a9f5f2;
 	float: left;
 	margin: 2px;
-	padding: 4px;
+	padding: 3px;
 	border: 1px solid blue;
 	overflow: hidden;
 }
-.picture img{
-	max-width: 100%;
-	height: auto;
+.picturePicture {
+	position: absolute;
+	height: 88%;
+	margin: 4px 4px 0 4px;
+	top: 0; left: 0; right: 0; 
+}
+.picturePicture img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.pictureName{
+	position: absolute;
+	height: 12%;
+	margin: 0 4px 4px 4px;
+	padding: 2px;
+	left: 0; right: 0; bottom: 4px;
+}
+.picture h4{
+	font-family: 'NarbutClassicRegular';
+	text-align: top;
+	font-size: 17px;
+	margin-left: 11px;
 }
 .questions{
 	font-size: 18px;
@@ -25,11 +88,10 @@ body{
 	padding: 6px;
 	background-color: #f3ffff;
 	float: left;
-
 }
-h4{
+.questions h4{
 	font-size: 17px;
-	margin-left: 6px;
+	margin: 2px 2px 2px 11px;
 }
 
 ul{
@@ -57,23 +119,29 @@ li button:hover{
 
 @media screen and (max-width: 768px) {
 	body{ background: linear-gradient(white, #a9f5f2, white, #a9f5f2, white);}
-	.picture, .questions {width: 96%;}
-
+	.picture, .questions {width: 96%; min-height: 288px;}
+	li  button{ height: 32px; margin: 2px}
+	.beginning p{font-size: 1.0em;}
 }
 
 #finish {
-	visibility: hidden;
+	display: none;
 	width: 310px;
-	height: 500px;
+	height: 570px;
 	position: absolute;
-	top: 70px;
-	left: 50%;
+	top: 23px;
+	left: 0;
+  	right: 0;
+	margin: auto;
 	background-color: #e0f2f7;
 	border: 8px solid red;
 	border-radius: 29px;
 }
 #finish h4{
-	margin: 7px 28px 5px 28px;
+	font-family: 'NarbutClassicRegular';
+	font-size: 19px;
+	text-align: center;
+	
 }
 #finish img{
 	width: 200px;
@@ -83,6 +151,7 @@ li button:hover{
 	
 }
 #finish p{
+	 text-indent: 1.1em;
 	font-size: 14px;
 	margin: 12px;
 }
@@ -93,6 +162,40 @@ li button:hover{
 	display:block;
  	 margin: auto;
 	background-color: #bde0ff; 
-	border-radius: 6px;
-
+	border-radius: 9px;
+}
+#rezultat{
+	font-size: 31px;
+	font-weight: 700;
+	color: red;
+}
+span{
+	font-family: 'NarbutClassicRegular';
+	font-size: 28px;
+	font-weight: 700;
+	color: red;
+}
+.stroka{
+	position: relative;
+	width: 94%;
+	height: 11%;
+	background-color: yellow;
+	border: 1px solid black;
+	margin: 3px;
+}
+#stroka__i{
+	float:left;
+	width: 11%;
+	height: 100%;
+}
+#stroka__foto{
+	float:left;
+	width: 17%;
+	height: 100%;
+	background-color: pink;
+}
+#stroka__vidpovid{
+	float:left;
+	width: 65%;
+	height: 100%;
 }
