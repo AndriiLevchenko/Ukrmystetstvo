@@ -12,7 +12,7 @@ body{
     right: 0;
 	width: 80%;
 	position: absolute;
-	padding: 43px;
+	padding: 27px;
 	margin: auto;
 	background: linear-gradient(#FFF8DC, #DEB887, #FFF8DC);
 	border: 5px solid SaddleBrown;
@@ -20,6 +20,7 @@ body{
 	z-index: 2;
 }
 .ending {
+
 	display: none;
 }
 h1{
@@ -120,7 +121,7 @@ li  button{
 	.picture, .questions {width: 96%; min-height: 288px;}
 	li  button{ height: 32px; margin: 2px}
 	.beginning p{font-size: 1.0em;}
-	#stroka__vidpovid{font-size: 8px; padding: 1px;}
+	#stroka__vidpovid{font-size: 6px; padding: 1px;}
 	.beginning, .ending {width: 76%;}
 }
 
@@ -177,8 +178,8 @@ span{
 }
 .stroka{
 	position: relative;
-	width: 94%;
-	height: 45px;
+	width: 96%;
+	height: 51px;
 	border: 1px solid grey;
 	border-radius: 5px;
 	margin: 4px;
@@ -195,7 +196,7 @@ span{
 .stroka__foto{
 	position: relative;
 	float:left;
-	width: 13%;
+	width: 12%;
 	height: 100%;
 }
 .stroka__foto img{
@@ -208,7 +209,7 @@ span{
 }
 .stroka__vidpovid{
 	float:left;
-	width: 69%;
+	width: 71%;
 	height: 100%;
 	padding: 3px;
 }
