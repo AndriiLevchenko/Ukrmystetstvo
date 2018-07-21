@@ -184,7 +184,7 @@ span{
 	width: 5%;
 	height: 100%;
 	padding: 2px;
-	font-size: 1.5em;
+	font-size: 1.4em;
 	font-family: 'NarbutClassicRegular';
 	text-align: center;
 }
@@ -215,5 +215,5 @@ span{
 	li  { height: 32px; margin: 2px}
 	.beginning, .ending {width: 76%;}
 	.beginning p{font-size: 1.0em;}
-	.stro__Answer{font-size: 10px; padding: 1px;}
+	.stro__Answer{font-size: 9px; padding: 1px;}
 }
